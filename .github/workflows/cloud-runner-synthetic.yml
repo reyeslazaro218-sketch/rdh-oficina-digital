@@ -1,0 +1,50 @@
+name: Cloud compute synthetic benchmark (public/free)
+on:
+  push:
+    branches:
+      - benchmark/cloud-ram-20261009
+    paths:
+      - benchmarks/cloud-runner-synthetic.mjs
+      - .github/workflows/cloud-runner-synthetic.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloud-ram-benchmark-oneoff
+  cancel-in-progress: true
+
+jobs:
+  synthetic-benchmark:
+    if: github.repository == 'reyeslazaro218-sketch/rdh-oficina-digital'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout public synthetic test only
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Use Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Display available runner resources
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --version
+          nproc
+          free -m
+          df -h /
+      - name: Benchmark CPU and 768 MiB RAM without project data
+        shell: bash
+        run: |
+          set -euo pipefail
+          node benchmarks/cloud-runner-synthetic.mjs --memory-mib=768 | tee /tmp/synthetic-benchmark.log
+          grep -F 'BENCH_RESULT_JSON=' /tmp/synthetic-benchmark.log
+      - name: Publish aggregate results
+        if: success()
+        shell: bash
+        run: |
+          echo "## Synthetic benchmark (no private content)" >> "$GITHUB_STEP_SUMMARY"
+          grep -F 'BENCH_RESULT_JSON=' /tmp/synthetic-benchmark.log >> "$GITHUB_STEP_SUMMARY"
