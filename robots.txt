@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://reyeslazaro218-sketch.github.io/rdh-oficina-digital/sitemap.xml
