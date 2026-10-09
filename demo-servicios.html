@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0d3e48">
+<meta name="description" content="Seis demostraciones interactivas sin datos reales: vidriería, taller, servicio técnico, mantenimiento, obras y gomería. Preparación de consultas con revisión humana.">
+<link rel="canonical" href="https://reyeslazaro218-sketch.github.io/rdh-oficina-digital/demo-servicios.html">
+<title>Demostraciones por oficio | Reyes Digital Hub</title>
+<style>
+:root{color-scheme:light;--bg:#f1f7f6;--text:#193748;--sub:#55717a;--accent:#10746a;--deep:#0d3e48;--border:#d4e6e4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text)}
+header{padding:17px max(18px,calc((100vw - 1080px)/2));background:var(--deep);color:#fff;font-weight:700}
+header a{color:#fff;text-decoration:none}
+main{max-width:1080px;margin:auto;padding:30px 18px 60px}
+h1{font-size:clamp(2rem,4.2vw,3.4rem);line-height:1.12;letter-spacing:-.035em;margin:0 0 15px}
+h2{font-size:1.2rem;margin:0 0 12px}
+p{margin:8px 0 15px}.lead{color:var(--sub);max-width:760px;font-size:1.05rem}
+.tag{display:inline-block;padding:5px 11px;margin-bottom:12px;border-radius:999px;background:#d9f2e7;color:#116356;font-size:.78rem;font-weight:700}
+.card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px}
+.grid{display:grid;grid-template-columns:minmax(250px,.86fr) minmax(280px,1.14fr);gap:16px;align-items:start}
+label{display:block;font-weight:700;margin:14px 0 7px}
+select{padding:12px;width:100%;border-radius:9px;border:1px solid #a7c3c1;color:var(--text);background:#fff;font:inherit}
+button,.cta{display:inline-block;text-align:center;text-decoration:none;font:inherit;background:var(--accent);color:#fff;border:0;border-radius:9px;padding:12px 16px;font-weight:700;cursor:pointer}
+button:hover,.cta:hover{background:var(--deep)}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #5bbcae}
+.muted{color:var(--sub);font-size:.9rem}.step{display:grid;grid-template-columns:36px 1fr;gap:10px;margin:12px 0}
+.num{background:#e2f4ef;border-radius:10px;width:36px;height:36px;display:grid;place-items:center;font-weight:800;color:#176b5e}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;background:#f5f9f9;border:1px solid #dcebea;border-radius:11px;padding:15px;margin:8px 0 12px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:17px}
+.notes{margin-top:28px;color:var(--sub);border-top:1px solid var(--border);padding-top:18px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}main{padding:26px 14px 50px}.card{padding:17px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><a href="./">REYES DIGITAL HUB / OFICINA DIGITAL</a></header>
+<main>
+<span class="tag">6 oficios · 18 ejemplos · 0 envíos automáticos</span>
+<h1>Así se organiza una consulta en segundos, antes de atenderla.</h1>
+<p class="lead">Elegí un tipo de negocio y un caso ficticio. Los agentes clasifican la solicitud, muestran qué datos faltan y preparan un borrador. El negocio comprueba todo antes de responder, presupuestar o agendar.</p>
+<div class="grid">
+<section class="card" aria-labelledby="elige">
+<h2 id="elige">Probá un flujo</h2>
+<label for="sector">Actividad del negocio</label>
+<select id="sector">
+<option value="vidrieria">Vidriería y mamparas</option>
+<option value="taller">Taller de chapa y pintura</option>
+<option value="electro">Servicio técnico de electrodomésticos</option>
+<option value="mantenimiento">Pintura y mantenimiento edilicio</option>
+<option value="obras">Obras, drenaje y saneamiento</option>
+<option value="gomeria">Gomería y taller mecánico</option>
+</select>
+<label for="case">Consulta de ejemplo</label>
+<select id="case"></select>
+<div class="actions">
+<button id="generate" type="button">Preparar ejemplo</button>
+<button id="copy" type="button">Copiar borrador</button>
+</div>
+<p class="muted" id="copy-status" role="status" aria-live="polite"></p>
+<p class="muted">Ningún ejemplo procede de clientes reales. No recogemos información personal, no usamos servicios externos ni enviamos mensajes.</p>
+</section>
+<section class="card" aria-labelledby="resultado">
+<h2 id="resultado">Resultado de la oficina de agentes</h2>
+<div class="step"><span class="num">1</span><div><strong>Consulta de entrada, simulada</strong><pre id="raw">Seleccioná un ejemplo.</pre></div></div>
+<div class="step"><span class="num">2</span><div><strong>Datos que el negocio debería comprobar</strong><pre id="fields">—</pre></div></div>
+<div class="step"><span class="num">3</span><div><strong>Respuesta preparada para revisión humana</strong><pre id="reply" aria-live="polite">—</pre></div></div>
+<p class="muted"><strong>Control de calidad:</strong> no se confirmó ninguna cita, no se cotizó un precio, no se emitió diagnóstico ni se envió correo.</p>
+</section>
+</div>
+<section class="card" style="margin-top:17px">
+<h2>¿Tu negocio recibe estas preguntas todos los días?</h2>
+<p>Podemos preparar una muestra orientada a tu actividad, con datos ficticios y sin contraseñas. Vos decidís si te resulta útil. La implementación y cualquier precio se acuerdan antes de trabajar.</p>
+<a class="cta" href="./#solicitar">Solicitar una demostración por correo</a>
+<a style="margin-left:12px" href="./">Volver al portafolio</a>
+</section>
+<p class="notes">Herramienta demostrativa de reglas locales: los textos no sustituyen el criterio profesional. No es un diagnóstico técnico, presupuesto final, agenda real, contrato ni sistema de emergencias. Las 18 consultas y respuestas fueron redactadas como ejemplos, no medidas de rapidez real ni resultados comerciales.</p>
+</main>
+<script>
+(function(){
+'use strict';
+const scenarios={
+ vidrieria:[
+  {name:'Mampara de baño',raw:'Busco una mampara para ducha de 120 cm aproximadamente. ¿Cuánto me sale colocada?',fields:['Tipo de mampara y apertura','Medidas definitivas tomadas por personal','Ubicación de instalación','Tipo de vidrio y herrajes'],reply:'Gracias por consultar. Podemos orientarte sobre mamparas. Para preparar un presupuesto necesitamos confirmar medidas, sistema de apertura, ubicación y tipo de vidrio. El equipo revisará las opciones y te responderá con una propuesta.'},
+  {name:'Vidrio roto de ventana',raw:'Se rompió un vidrio de una ventana. ¿Lo cambian hoy?',fields:['Medidas y tipo de vidrio','Ubicación aproximada','Estado y accesibilidad de la abertura','Disponibilidad por confirmar'],reply:'Gracias por escribir. Para evaluar el cambio del vidrio necesitaremos medidas, tipo de abertura y ubicación. Confirmaremos disponibilidad y fecha posible antes de agendar el trabajo.'},
+  {name:'Espejo a medida',raw:'Quiero un espejo a medida para mi casa.',fields:['Medidas finales','Espesor y acabado','Con o sin colocación','Ubicación'],reply:'Con gusto podemos revisar una opción de espejo a medida. ¿Podés indicarnos dimensiones aproximadas, acabado preferido y si necesitás instalación? El presupuesto se confirma después de revisar el pedido.'}
+ ],
+ taller:[
+  {name:'Trabajo de chapa y pintura',raw:'Tengo un golpe en la puerta del auto, ¿cuánto cuesta arreglarlo?',fields:['Marca/modelo/año del vehículo','Zona y alcance del daño','Sucursal preferida','Inspección necesaria antes de presupuestar'],reply:'Gracias por contactarnos. Para evaluar el arreglo de chapa y pintura necesitamos datos del vehículo y revisar el daño. Podemos indicarte cómo coordinar una evaluación; el taller confirma luego presupuesto y disponibilidad.'},
+  {name:'Consulta de siniestro',raw:'Tuve un siniestro con el auto. ¿Trabajan con mi seguro?',fields:['Aseguradora','Estado del trámite de siniestro','Sucursal elegida','Documentación requerida por el taller'],reply:'Podemos orientarte con los pasos iniciales. ¿Qué aseguradora tenés y en qué etapa está el trámite? El equipo confirmará cobertura, documentación y disponibilidad de inspección.'},
+  {name:'Solicitud de turno',raw:'Quiero llevar el auto la semana que viene.',fields:['Trabajo solicitado','Sucursal preferida','Disponibilidad real del taller','Datos del vehículo por confirmar'],reply:'Gracias por escribir. Contanos qué trabajo necesita el vehículo y qué sucursal preferís. Consultaremos el calendario del taller antes de confirmarte una fecha.'}
+ ],
+ electro:[
+  {name:'Heladera que no enfría',raw:'La heladera dejó de enfriar. ¿Pueden ir hoy?',fields:['Marca y modelo','Síntoma observado','Zona del domicilio','Disponibilidad técnica real'],reply:'Gracias por la consulta. ¿Podés decirnos marca, modelo y qué ocurre con la heladera? También necesitamos conocer la zona para verificar si hay visitas disponibles. Un técnico confirmará el procedimiento y el presupuesto tras evaluar el equipo.'},
+  {name:'Lavarropas pierde agua',raw:'Mi lavarropas pierde agua y quiero un presupuesto.',fields:['Marca y modelo','Desde cuándo ocurre','Situación de uso y seguridad','Zona y posible visita'],reply:'Recibimos tu consulta. Para organizarla, indicá marca, modelo y desde cuándo observás la pérdida. No podemos diagnosticar ni presupuestar sin revisión técnica; el equipo indicará el siguiente paso.'},
+  {name:'Aire acondicionado',raw:'El aire acondicionado no enfría bien.',fields:['Marca y modelo','Problema observado','Tipo de equipo','Localidad'],reply:'Gracias por escribirnos. Para preparar la evaluación necesitamos marca, modelo, tipo de equipo y una descripción breve del problema. El personal técnico decidirá si corresponde una visita.'}
+ ],
+ mantenimiento:[
+  {name:'Humedad en techo',raw:'Tengo humedad en el techo y necesito un presupuesto.',fields:['Tipo de inmueble','Zona afectada','Localidad','Visita técnica necesaria'],reply:'Podemos organizar tu solicitud para que un técnico evalúe la humedad. ¿Se trata de una casa, local o edificio, y en qué zona está? El presupuesto requiere una inspección y aprobación del equipo.'},
+  {name:'Pintura de habitaciones',raw:'Quiero pintar dos habitaciones. ¿Cuánto me cobran?',fields:['Superficie aproximada','Estado de paredes','Interior o exterior','Materiales y ubicación'],reply:'Gracias por consultar por pintura. Para preparar una estimación necesitamos dimensiones, estado de las paredes y si se incluirán materiales. Luego se confirmará alcance y precio antes de realizar el trabajo.'},
+  {name:'Mantenimiento de edificio',raw:'Necesitamos un servicio de mantenimiento general del local.',fields:['Tipo de tareas','Periodicidad esperada','Ubicación','Acceso para evaluación'],reply:'Podemos ordenar los requerimientos para elaborar una propuesta. ¿Qué tareas necesitás, con qué frecuencia y en qué ubicación? Un responsable revisará el alcance y coordinará los próximos pasos.'}
+ ],
+ obras:[
+  {name:'Drenaje de obra',raw:'Tenemos problemas de drenaje en un predio. ¿Pueden presupuestar?',fields:['Tipo de obra y ubicación','Descripción técnica inicial','Planos o relevamientos disponibles','Visita de profesionales'],reply:'Gracias por consultar. Para orientar su solicitud de drenaje necesitamos tipo de obra, ubicación y antecedentes disponibles. El equipo especializado evaluará el caso antes de proponer solución, plazo o presupuesto.'},
+  {name:'Limpieza de cañerías',raw:'Necesitamos limpieza de una red pluvial.',fields:['Tipo de red y tramo','Localización','Síntomas observados','Riesgos y urgencia comunicada'],reply:'Podemos registrar su solicitud de mantenimiento de red pluvial. Indiquen ubicación, tramo afectado y síntomas reportados. La prioridad y metodología deberán confirmarse por personal técnico.'},
+  {name:'Inspección con cámara',raw:'Quiero cotizar una inspección CCTV de cañerías.',fields:['Tipo de instalación','Acceso disponible','Objetivo de la inspección','Ubicación y evaluación previa'],reply:'Gracias por su consulta. Para valorar una inspección CCTV necesitamos conocer el tipo de instalación y el objetivo. El equipo técnico confirmará alcance, viabilidad y cotización después de revisar la información.'}
+ ],
+ gomeria:[
+  {name:'Neumático pinchado',raw:'Pinché una rueda de moto. ¿Puedo pasar ahora?',fields:['Tipo de vehículo','Tipo de servicio solicitado','Horario disponible real','Estado del neumático a revisar'],reply:'Gracias por escribir. Contanos si es moto o auto y qué servicio necesitás. Antes de decirte si podés pasar ahora, el taller comprobará horario y disponibilidad. La reparación se confirma tras la revisión.'},
+  {name:'Consulta de frenos',raw:'Los frenos hacen ruido. ¿Cuánto sale repararlos?',fields:['Tipo de vehículo','Síntoma descrito sin diagnóstico','Inspección de seguridad necesaria','Cita pendiente de confirmar'],reply:'Gracias por consultar. Los frenos requieren inspección presencial; no podemos diagnosticar ni presupuestar a distancia. El taller puede indicarte cómo solicitar una revisión segura.'},
+  {name:'Mantenimiento de auto',raw:'Necesito hacerle mantenimiento al auto esta semana.',fields:['Marca y modelo','Servicio solicitado','Fecha preferida','Disponibilidad del taller'],reply:'Podemos registrar la solicitud de mantenimiento. ¿Qué vehículo es y qué revisión necesitás? Consultaremos los turnos disponibles antes de confirmar una visita.'}
+ ]
+};
+const sector=document.getElementById('sector'),choose=document.getElementById('case'),raw=document.getElementById('raw'),fields=document.getElementById('fields'),reply=document.getElementById('reply'),status=document.getElementById('copy-status');
+function options(){const a=scenarios[sector.value];choose.replaceChildren();a.forEach((c,i)=>{const o=document.createElement('option');o.value=String(i);o.textContent=c.name;choose.appendChild(o);});render();}
+function render(){const a=scenarios[sector.value],c=a[Number(choose.value)||0];raw.textContent=c.raw;fields.textContent=c.fields.map((x,i)=>String(i+1)+'. '+x).join('\n');reply.textContent=c.reply;status.textContent='Ejemplo creado localmente. Ningún mensaje fue enviado.';}
+sector.addEventListener('change',options);choose.addEventListener('change',render);
+document.getElementById('generate').addEventListener('click',render);
+document.getElementById('copy').addEventListener('click',async()=>{
+ const message=reply.textContent;
+ try{if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(message);status.textContent='Borrador copiado; requiere revisión humana antes de utilizarlo.';}else status.textContent='Seleccioná el borrador para copiarlo manualmente.';}
+ catch{status.textContent='Seleccioná el borrador para copiarlo manualmente.';}
+});
+const initial=new URLSearchParams(window.location.search).get('sector');
+if(Object.hasOwn(scenarios,initial))sector.value=initial;
+options();
+})();
+</script>
+</body>
+</html>
