@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Probá seis ejemplos gratuitos de microtareas para pequeños negocios: presupuestos, atención, turnos y mantenimiento. Demostraciones con datos ficticios de Reyes Digital Hub.">
+<link rel="canonical" href="https://reyeslazaro218-sketch.github.io/rdh-oficina-digital/ejemplos.html">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#143d46">
+<title>6 ejemplos de tareas de Oficina Digital | Reyes Digital Hub</title>
+<style>
+:root{font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif;color:#143540;background:#f3f8f7}
+*{box-sizing:border-box}body{margin:0}header{background:#123c47;color:white;padding:17px max(18px,calc((100vw - 1080px)/2))}
+nav{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none}main{max-width:1080px;margin:auto;padding:36px 18px 80px}
+h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.13;letter-spacing:-.04em;max-width:800px;margin:12px 0 16px}
+h2{font-size:1.55rem}p{max-width:840px}.muted{color:#566d75}
+.eyebrow{font-size:.78rem;color:#106c63;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.notice{background:#e0f1ed;padding:12px 15px;border-radius:12px;border:1px solid #c0dfd5;color:#20574f}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:26px 0}
+button,.action{font:inherit;cursor:pointer;border:0;border-radius:10px;padding:12px 15px;background:#146b64;color:white;font-weight:700}
+button:hover,.action:hover{background:#104d49}button:focus-visible,.action:focus-visible{outline:3px solid #75bdb3;outline-offset:3px}
+.card{background:white;border:1px solid #d1e2df;padding:20px;border-radius:16px;box-shadow:0 3px 14px #123c4709}
+.card h3{margin:0 0 8px;font-size:1.08rem}.card p{min-height:72px;margin:4px 0 18px;color:#52686f;font-size:.94rem}
+.card button{width:100%}.card button[aria-pressed="true"]{background:#12434b}
+.detail{background:#fff;border:1px solid #cadeda;border-radius:16px;padding:24px}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.detail strong{display:block;margin-bottom:6px}
+pre{white-space:pre-wrap;overflow-wrap:break-word;background:#f0f5f4;padding:16px;border-radius:10px;font:inherit;line-height:1.6;margin:4px 0 10px}
+ul{padding-left:20px;margin:4px 0 12px}.action{display:inline-block;text-decoration:none;margin-top:14px}
+footer{border-top:1px solid #d3e1df;padding-top:19px;margin-top:35px;font-size:.85rem;color:#66767c}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.detail-grid{grid-template-columns:1fr}}
+@media(max-width:510px){main{padding:24px 14px 60px}.grid{grid-template-columns:1fr}.card p{min-height:0}}
+</style>
+</head>
+<body>
+<header><nav><strong>REYES DIGITAL HUB / OFICINA DIGITAL</strong><a href="./">← Inicio</a></nav></header>
+<main>
+<div class="eyebrow">Demostración en vivo · Sin registro</div>
+<h1>Seis tareas pequeñas que tu negocio puede delegar.</h1>
+<p class="muted">Elegí un rubro y mirá cómo un asistente prepara una consulta, las preguntas necesarias y un borrador de respuesta. Vos revisás todo antes de enviar, presupuestar o confirmar una cita.</p>
+<p class="notice">Todos los nombres, consultas, datos y horarios de estos ejemplos son inventados. No son clientes, encargos contratados ni integraciones con empresas mencionadas en otro lugar.</p>
+<section class="grid" aria-label="Rubros de demostración" id="cards"></section>
+<section class="detail" aria-label="Ejemplo seleccionado">
+<div class="eyebrow">Resultado de muestra</div>
+<h2 id="case-title">Seleccioná una tarea</h2>
+<div class="detail-grid">
+<div><strong>Consulta inventada</strong><pre id="request" aria-live="polite"></pre>
+<strong>Información que falta confirmar</strong><ul id="questions"></ul></div>
+<div><strong>Respuesta preparada para revisión</strong><pre id="reply" aria-live="polite"></pre>
+<strong>Control de calidad</strong><pre id="qa"></pre></div>
+</div>
+<a id="contact" class="action" href="mailto:reyesdigitalhub@gmail.com?subject=Solicitud%20de%20demostraci%C3%B3n%20-%20Oficina%20Digital">Solicitar una muestra de este rubro</a>
+<p class="muted" style="font-size:.84rem">El botón abre tu aplicación de correo con un borrador. No envía mensajes por sí solo, no guarda tus datos y no te suscribe a publicidad.</p>
+</section>
+<footer>Reyes Digital Hub · Montevideo, Uruguay · Demostraciones estáticas con datos ficticios · <a href="./">Volver al portafolio</a> · <a href="mailto:reyesdigitalhub@gmail.com">Contacto comercial</a></footer>
+</main>
+<script>
+(()=>{
+'use strict';
+const cases=[
+ {name:'Pintura e impermeabilización',label:'Mantenimiento',desc:'Pedir la información que falta antes de organizar un presupuesto.',
+ request:'Hola. Tengo humedad en una pared de un apartamento. ¿Cuánto cuesta arreglarla?',
+ questions:['Ciudad y zona del inmueble','Área aproximada afectada','Fotos y tipo de superficie (si el cliente desea compartirlas)','Disponibilidad para inspección'],
+ reply:'Gracias por tu consulta. Para evaluar el problema de humedad necesitaríamos confirmar ubicación, superficie aproximada y si es posible coordinar una inspección. Un especialista revisará la información antes de indicarte trabajos y costos.',
+ qa:'Sin diagnóstico técnico · Sin precio inventado · Visita pendiente de confirmación'},
+ {name:'Chapa y pintura automotriz',label:'Taller',desc:'Ordenar consultas de siniestros, inspecciones y sucursales.',
+ request:'Me chocaron un guardabarros. ¿Me reciben por seguro mañana?',
+ questions:['Sucursal preferida','Vehículo y año','Aseguradora, si corresponde','Horario preferido para revisión'],
+ reply:'Podemos preparar tu consulta para chapa y pintura. ¿En qué sucursal te resulta mejor la atención y qué aseguradora interviene, si aplica? El equipo confirmará cómo se gestiona la revisión y la disponibilidad.',
+ qa:'No confirma cita · No promete cobertura del seguro · No calcula reparación'},
+ {name:'Vidriería y mamparas',label:'Presupuestos',desc:'Preparar consultas de medidas y colocación sin errores de cotización.',
+ request:'Quiero una mampara a medida para un baño pequeño. ¿Me dicen precio?',
+ questions:['Medidas aproximadas y tipo de abertura','Ubicación de la instalación','Tipo de vidrio o acabado deseado','Necesidad de visita para medir'],
+ reply:'Gracias por preguntar por una mampara. Para preparar un presupuesto orientativo necesitamos las medidas aproximadas, tipo de abertura y ubicación de instalación. Confirmaremos dimensiones y precio después de la revisión del personal.',
+ qa:'Medidas sujetas a visita · Precio pendiente · Sin pedido formal creado'},
+ {name:'Reparación de electrodomésticos',label:'Servicio técnico',desc:'Clasificar fallas declaradas para revisión profesional.',
+ request:'La heladera dejó de enfriar. ¿Cuánto me sale arreglarla?',
+ questions:['Marca y modelo de la heladera','Cuándo comenzó la falla','Zona del domicilio','Preferencia para una eventual visita'],
+ reply:'Podemos registrar tu consulta sobre la heladera. Para que el técnico la evalúe, indicá marca, modelo, zona y desde cuándo presenta el problema. El diagnóstico, el presupuesto y el turno se confirmarán luego por el equipo.',
+ qa:'Sin diagnóstico remoto · Sin prometer repuestos · Sin cita ni presupuesto definitivos'},
+ {name:'Drenaje e infraestructura',label:'Obras',desc:'Ordenar incidencias y derivarlas a personal técnico.',
+ request:'Hay una obstrucción en un pluvial de un local. ¿Pueden venir hoy?',
+ questions:['Ciudad y ubicación general','Tipo de drenaje y síntoma reportado','Urgencia comunicada','Contacto del responsable para visita'],
+ reply:'Gracias por informar la incidencia. Podemos organizar la información para evaluación técnica: ubicación, tipo de drenaje y urgencia. El personal responsable confirmará si hay disponibilidad de inspección y los pasos apropiados.',
+ qa:'Requiere evaluación profesional · No garantiza respuesta urgente · Sin intervención autónoma'},
+ {name:'Gomería y taller mecánico',label:'Taller',desc:'Dar una respuesta inicial sin prometer disponibilidad ni stock.',
+ request:'Se me pinchó una cubierta. ¿Tienen para una moto?',
+ questions:['Tipo de vehículo','Medida de neumático si la conoce','Ubicación y si puede trasladarse','Horario de atención preferido'],
+ reply:'Podemos organizar tu consulta por neumáticos de moto. Indicá, si la sabés, la medida de la cubierta y si podés acercarte al taller. El negocio confirmará disponibilidad, costo y horario antes de acordar el trabajo.',
+ qa:'Sin afirmar stock · Sin precio inventado · Sin reserva automática'}
+];
+const cards=document.getElementById('cards');
+const title=document.getElementById('case-title'),req=document.getElementById('request');
+const questions=document.getElementById('questions'),reply=document.getElementById('reply'),qa=document.getElementById('qa'),contact=document.getElementById('contact');
+const controls=[];
+function show(n){
+ const v=cases[n];title.textContent=v.name;req.textContent=v.request;
+ questions.replaceChildren();v.questions.forEach(q=>{const li=document.createElement('li');li.textContent=q;questions.appendChild(li)});
+ reply.textContent=v.reply;qa.textContent=v.qa;
+ contact.href='mailto:reyesdigitalhub@gmail.com?subject='+encodeURIComponent('Solicitud de demostración - Oficina Digital')+
+ '&body='+encodeURIComponent('Hola, quiero conocer una demostración de Oficina Digital para el rubro '+v.name+'. ¿Podemos evaluar una muestra con datos ficticios?\n\nEste mensaje permite responder a mi consulta, no enviar campañas publicitarias.');
+ controls.forEach((c,i)=>c.setAttribute('aria-pressed',String(i===n)));
+}
+cases.forEach((v,i)=>{
+ const box=document.createElement('article');box.className='card';
+ const label=document.createElement('div');label.className='eyebrow';label.textContent=v.label;
+ const h=document.createElement('h3');h.textContent=v.name;
+ const p=document.createElement('p');p.textContent=v.desc;
+ const btn=document.createElement('button');btn.type='button';btn.textContent='Ver ejemplo';btn.addEventListener('click',()=>show(i));
+ box.append(label,h,p,btn);cards.appendChild(box);controls.push(btn);
+});
+show(0);
+})();
+</script>
+</body>
+</html>
