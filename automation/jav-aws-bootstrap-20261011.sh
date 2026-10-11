@@ -4,7 +4,7 @@ set -euo pipefail
 umask 077
 export AWS_PAGER=""
 REGION=us-east-2
-EXPECTED_ACCOUNT="\${1:-}"
+EXPECTED_ACCOUNT="${1:-}"
 VPC=vpc-090ce181574ee70f3
 SUBNET=subnet-0cafd1d697f8dea48
 SG_NAME=JAV-EC2-NO-INBOUND
