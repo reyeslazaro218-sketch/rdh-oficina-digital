@@ -49,14 +49,14 @@ footer{color:var(--mut);max-width:1120px;padding:0 16px 45px;margin:auto;font-si
 <div class="stats">
  <div class="stat"><small>Servicios web</small><strong>30</strong></div>
  <div class="stat"><small>Comprables en Freelancer</small><strong>1</strong></div>
- <div class="stat"><small>Oportunidades revisadas</small><strong id="jobCount">—</strong></div>
+ <div class="stat"><small>Postulaciones verificadas</small><strong id="appCount">2</strong></div>
  <div class="stat"><small>Pedidos confirmados</small><strong>0</strong></div>
 </div>
 <div class="cols">
 <section class="card" id="buscar"><div class="topline"><h2>01 · Buscar y postular</h2><span class="pill">Activo: selección</span></div>
 <p class="muted small">Ofertas públicas comprobadas en la fecha indicada; antes de postular revisa el estado, las competencias exigidas y el presupuesto en Freelancer. Los anuncios cambian rápidamente.</p>
-<div class="notice"><strong>Sin postulaciones enviadas por este panel.</strong> El importe y la elegibilidad de cada proyecto deben confirmarse en la cuenta. La clasificación y los textos son borradores, no mensajes enviados a clientes.</div>
-<p id="dateNote" class="small muted">Cargando oportunidades…</p>
+<div class="notice"><strong>2 postulaciones confirmadas en Freelancer hoy (14/10/2026).</strong> Las ofertas para Numerical Data Entry &amp; Cleaning (₹500/h) y Copy-Paste Data From PDFs (₹450/h) ya están enviadas. No volver a ofertar en esos proyectos. No hay contratos ni cobros confirmados. Las demás fichas requieren verificación actual antes de postular.</div>
+<p class="small muted">Oportunidades en la instantánea: <strong id="jobCount">—</strong></p><p id="dateNote" class="small muted">Cargando oportunidades…</p>
 <div id="jobs" class="list"><p class="small muted">Cargando trabajos disponibles…</p></div>
 <details><summary>Generar y copiar una propuesta revisable</summary>
 <label for="selectJob">Trabajo</label><select id="selectJob"></select>
@@ -95,8 +95,10 @@ footer{color:var(--mut);max-width:1120px;padding:0 16px 45px;margin:auto;font-si
   for(const r of rows){
    const box=document.createElement('article');box.className='job';
    const moderate=r.bids<=15?'Competencia inicial baja/moderada':'Competencia alta';
-   box.innerHTML='<h3>'+escapeHtml(r.title)+'</h3><div class="meta"><span>'+escapeHtml(r.checked_date)+'</span><span>'+r.bids+' ofertas cuando se comprobó</span><span>'+moderate+'</span></div><p>'+escapeHtml(r.description)+'</p><p class="small"><strong>Revisión necesaria:</strong> '+escapeHtml(r.note)+'</p><div class="actions"><a class="btn" target="_blank" rel="noopener noreferrer" href="'+escapeHtml(r.url)+'">Ver anuncio ↗</a><button type="button" class="secondary" data-id="'+escapeHtml(r.id)+'">Preparar propuesta</button></div>';
-   $('jobs').append(box);const opt=document.createElement('option');opt.value=r.id;opt.textContent=r.title;s.append(opt);
+   const submitted=r.application_status==='submitted_verified';
+   box.innerHTML='<h3>'+escapeHtml(r.title)+'</h3><div class="meta"><span>'+escapeHtml(r.checked_date)+'</span><span>'+r.bids+' ofertas cuando se comprobó</span><span>'+moderate+'</span>'+(submitted?'<span style="color:#0b6b57;font-weight:800">✓ POSTULACIÓN CONFIRMADA</span>':'')+'</div><p>'+escapeHtml(r.description)+'</p><p class="small"><strong>Revisión necesaria:</strong> '+escapeHtml(r.note)+'</p><div class="actions"><a class="btn" target="_blank" rel="noopener noreferrer" href="'+escapeHtml(r.url)+'">'+(submitted?'Ver nuestra oferta ↗':'Ver anuncio ↗')+'</a>'+(submitted?'':'<button type="button" class="secondary" data-id="'+escapeHtml(r.id)+'">Preparar propuesta</button>')+'</div>';
+
+   $('jobs').append(box);if(!submitted){const opt=document.createElement('option');opt.value=r.id;opt.textContent=r.title;s.append(opt);}
   }
   document.querySelectorAll('[data-id]').forEach(b=>b.addEventListener('click',()=>{s.value=b.dataset.id;fill();document.querySelector('#buscar details').open=true;$('proposal').scrollIntoView({behavior:'smooth',block:'center'});}));
   fill();
