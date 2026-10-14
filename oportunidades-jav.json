@@ -2,11 +2,11 @@
   "schema_version": 1,
   "snapshot_date": "2026-10-14",
   "source": "Freelancer.com — fichas de proyectos públicos",
-  "last_check_note": "Instantánea revisada el 14/10/2026. Los anuncios, número de propuestas, estado y elegibilidad pueden cambiar. Confirmar directamente antes de ofertar.",
+  "last_check_note": "14/10/2026 17:20 Uruguay: dos candidaturas enviadas y confirmadas en pantallas oficiales de Freelancer.com; datos de oportunidades son instantáneas, no feed en vivo. Confirmar vigencia para nuevas postulaciones.",
   "automatic_live_feed": false,
   "marketplace_posts_confirmed": 1,
   "public_catalog_offers": 30,
-  "confirmed_applications": 0,
+  "confirmed_applications": 2,
   "confirmed_sales": 0,
   "jobs": [
     {
@@ -34,14 +34,18 @@
       "description": "Tomar datos numéricos de bases de datos online, colocarlos en la hoja maestra, estandarizar decimales y señalar discrepancias. Acceso, volumen, duración no confirmados.",
       "status": "open",
       "checked_date": "2026-10-14",
-      "bids": 1,
+      "bids": 19,
       "service": "csv-clean",
       "payment_verified": null,
       "scope_unclear": true,
       "platform_eligibility": "unknown",
-      "note": "Competencia muy baja, pero puede exigir acceso a bases externas y un encargo prolongado: pedir detalles primero.",
+      "note": "POSTULACIÓN ENVIADA Y VERIFICADA, NO REPETIR. Se solicitaron fuentes, cantidad y columnas; pago/adjudicación NO confirmado.",
       "proposal_es": "Hola, puedo ayudar con la transcripción y validación de datos numéricos, manteniendo formatos consistentes y registrando anomalías. Antes de dar precio: ¿qué fuentes de datos usaremos, cuántos registros hay y durante cuánto tiempo se requiere el servicio? Solo trabajaría con accesos permitidos y sin mover datos fuera de los canales autorizados.",
-      "proposal_en": "Hello, I can help organize and validate numerical data with consistent formatting and an anomaly log. Before quoting, could you confirm the data sources, approximate record count and expected working period? I would use only authorized access and the marketplace's permitted communication and delivery channels."
+      "proposal_en": "Hello, I can collect and verify numerical records from your approved online sources, format decimals consistently, check for duplicates with agreed rules, and deliver an organized Google Sheet plus a concise anomaly log. I can start with a small sample for your review. Could you confirm the source sites, approximate number of records, and required fields? I will flag unclear or missing values instead of guessing and confirm the turnaround after reviewing the sample. I will communicate and deliver through Freelancer.",
+      "application_status": "submitted_verified",
+      "bid_rate_inr_hour": 500,
+      "weekly_hours": 10,
+      "proposal_position_at_submission": "12/19"
     },
     {
       "id": "40757590",
@@ -59,6 +63,27 @@
       "note": "Muchos competidores y requisito potencial de gran escala; prioridad baja frente a proyectos sencillos.",
       "proposal_es": "Hola, puedo preparar una consolidación y limpieza de Excel documentando cada ajuste y preservando datos originales ambiguos para revisión. Para presupuestar sin errores, ¿cuántos archivos y filas contiene el conjunto? Confirmaría el formato de fechas, moneda y el criterio de duplicados antes de intervenir.",
       "proposal_en": "Hello, I can help with structured spreadsheet cleanup and consolidation, with a clear change log and review of ambiguous entries. How many files and rows are involved? I would confirm duplicate rules, numeric/date formats and scope before giving a final quote."
+    },
+    {
+      "id": "40767528",
+      "source": "freelancer",
+      "title": "Copy-Paste Data From PDFs",
+      "url": "https://www.freelancer.com/projects/google-sheets/Copy-Paste-Data-From-PDFs",
+      "description": "Extraer texto exacto solicitado de documentos PDF y entregar Excel/Word/Google Sheets sin alterar puntuación, orden ni estructura. Debe verificarse si es PDF digital o escaneado y cantidad de páginas.",
+      "status": "open",
+      "checked_date": "2026-10-14",
+      "bids": 24,
+      "service": "pdf-digital",
+      "payment_verified": null,
+      "scope_unclear": true,
+      "platform_eligibility": "confirmed",
+      "application_status": "submitted_verified",
+      "bid_rate_inr_hour": 450,
+      "weekly_hours": 10,
+      "proposal_position_at_submission": "12/24",
+      "note": "POSTULACIÓN ENVIADA Y VERIFICADA, NO REPETIR. El cliente aún debe confirmar páginas, formato y sample. Sin adjudicación ni pago confirmados.",
+      "proposal_es": "Hola, puedo extraer y revisar exactamente los textos indicados en sus PDF, conservando orden, puntuación y formato en Excel/Word. ¿Cuántas páginas son y los PDF permiten seleccionar el texto o son imágenes? Ofrezco una página de muestra antes de acordar plazo y volumen. Todo a través de Freelancer.",
+      "proposal_en": "Hello, I can transfer the exact text you identify from your PDFs into a clean Excel, Google Sheet or Word document, preserving source order, punctuation and layout. I will check the output against the original pages for encoding errors and hidden spaces, and flag unclear text rather than guess. I can prepare a short sample page first so you can verify the format before we agree on the full volume and turnaround. Approximately how many PDF pages are involved, and are they selectable-text PDFs or scans? I will keep communication and delivery on Freelancer."
     }
   ]
 }
